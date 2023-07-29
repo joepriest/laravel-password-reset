@@ -1,0 +1,32 @@
+{
+    "name": "joepriest/laravel-password-reset",
+    "description": "A simple artisan command to reset user passwords.",
+    "keywords": ["laravel", "artisan", "command", "password", "reset"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JoePriest\\LaravelPasswordReset\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JoePriest\\LaravelPasswordReset\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joe Priest",
+            "email": "hello@joepriest.dev"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JoePriest\\LaravelPasswordReset\\ServiceProvider"
+            ]
+        }
+    }
+}
