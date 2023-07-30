@@ -28,8 +28,8 @@ If you're using a version of Laravel prior to 5.5, add the service provider to `
 
 To reset a password, run `user:reset-password` from your console, with the following options:
 
-- `--U|user=` : The ID of the user
-- `--P|password=` : The new password
+- `--user=` : The ID of the user
+- `--password=` : The new password
 - `--R|random `: Use a random password
 
 If no user ID is provided, you will be asked to choose a user (searching the `name` field by default, but this can be overridden).
