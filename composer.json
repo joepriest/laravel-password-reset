@@ -28,7 +28,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "JoePriest\\LaravelPasswordReset\\ServiceProvider"
+                "JoePriest\\LaravelPasswordReset\\PasswordResetServiceProvider"
             ]
         }
     }
