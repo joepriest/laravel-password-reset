@@ -19,6 +19,9 @@
             "email": "hello@joepriest.dev"
         }
     ],
+    "require": {
+        "php": "^8.0"
+    },
     "require-dev": {
         "orchestra/testbench": "^8.5"
     },
