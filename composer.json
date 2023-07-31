@@ -23,7 +23,8 @@
         "php": "^8.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.5"
+        "orchestra/testbench": "^8.5",
+        "laravel/pint": "^1.10"
     },
     "extra": {
         "laravel": {

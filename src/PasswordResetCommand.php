@@ -20,11 +20,6 @@ class PasswordResetCommand extends Command
 
     protected string $passwordField;
 
-    /**
-     * Create a new command instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         parent::__construct();
@@ -83,11 +78,11 @@ class PasswordResetCommand extends Command
 
         $randomPassword = str()->random(14);
 
-        if($this->option('random') === true){
+        if ($this->option('random') === true) {
             return $randomPassword;
         }
 
-        return $this->ask("What would you like the new password to be?", $randomPassword);
+        return $this->ask('What would you like the new password to be?', $randomPassword);
     }
 
     public function resetPasswordForUser($user, $password)

@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
-use JoePriest\LaravelPasswordReset\Tests\TestCase;
 
 class PasswordResetTest extends TestCase
 {

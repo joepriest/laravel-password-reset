@@ -4,7 +4,6 @@ namespace JoePriest\LaravelPasswordReset;
 
 use Illuminate\Foundation\Console\AboutCommand;
 use Illuminate\Support\ServiceProvider;
-use JoePriest\LaravelPasswordReset\PasswordResetCommand;
 
 class PasswordResetServiceProvider extends ServiceProvider
 {
@@ -26,7 +25,7 @@ class PasswordResetServiceProvider extends ServiceProvider
     public function boot()
     {
         AboutCommand::add('JoePriest/PasswordReset', [
-            'Version' => '1.0.1'
+            'Version' => '1.0.1',
         ]);
 
         $this->mergeConfigFrom(__DIR__.'/../config/password-reset.php', 'password-reset');
