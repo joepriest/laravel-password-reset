@@ -3,6 +3,7 @@
 namespace JoePriest\LaravelPasswordReset;
 
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 
 class PasswordResetCommand extends Command
 {
@@ -37,7 +38,7 @@ class PasswordResetCommand extends Command
         $this->resetPasswordForUser($user, $password);
     }
 
-    private function fetchOrSearchForUser()
+    private function fetchOrSearchForUser(): Model
     {
         if ($this->hasOption('user')) {
             return $this->tryToFetchUser();
@@ -46,19 +47,19 @@ class PasswordResetCommand extends Command
         return $this->searchForUser();
     }
 
-    private function tryToFetchUser()
+    private function tryToFetchUser(): Model
     {
         return $this->userModel::find($this->option('user')) ?? $this->fallbackToSearch();
     }
 
-    private function fallbackToSearch()
+    private function fallbackToSearch(): Model
     {
         $this->warn('User not found with the given ID.');
 
         return $this->searchForUser();
     }
 
-    private function searchForUser()
+    private function searchForUser(): Model
     {
         $users = $this->userModel::select($this->searchField)
             ->get()
@@ -70,7 +71,7 @@ class PasswordResetCommand extends Command
         return $this->userModel::where($this->searchField, $searchResult)->firstOrFail();
     }
 
-    private function selectPassword()
+    private function selectPassword(): string
     {
         if ($this->hasOption('password') && $this->option('password') !== null) {
             return $this->option('password');
@@ -85,7 +86,7 @@ class PasswordResetCommand extends Command
         return $this->ask('What would you like the new password to be?', $randomPassword);
     }
 
-    public function resetPasswordForUser($user, $password)
+    public function resetPasswordForUser($user, $password): void
     {
         $this->comment("Resetting password for {$user->{$this->searchField}}...");
 
