@@ -14,23 +14,14 @@ Install the package via Composer:
 composer require joepriest/laravel-password-reset
 ```
 
-If you're using a version of Laravel prior to 5.5, add the service provider to `config/app.php`.
-
-```php
-'providers' => [
-    // ...
-    JoePriest\LaravelPasswordReset\PasswordResetServiceProvider::class,
-];
-```
-
 
 ## Usage
 
 To reset a password, run `user:reset-password` from your console, with the following options:
 
-- `--user=` : The ID of the user
-- `--password=` : The new password
-- `--R|random `: Use a random password
+- `--user=`: The ID of the user
+- `--password=`: The new password
+- `--R|random`: Use a random password
 
 If no user ID is provided, you will be asked to choose a user (searching the `name` field by default, but this can be overridden).
 
@@ -39,7 +30,11 @@ If no new password is provided, and the `--random` flag is not set, you will be 
 
 ## Configuration
 
-The command uses default settings for the `user` model, and the `name` and `password` fields. If you wish to override these settings, publish the configuration file:
+- `user_model`: The path to the user model (defaults to `App\Models\User::class`)
+- `search_field`: The field to be used when searching for a user (defaults to `name`)
+- `password`: The password field which the command will reset (defaults to `password`)
+
+If you wish to override these settings, publish the configuration file:
 
 ```shell
 php artisan vendor:publish
