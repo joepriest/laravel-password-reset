@@ -1,0 +1,18 @@
+on: push
+name: Tests
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      image: kirschbaumdevelopment/laravel-test-runner:8.2
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+
+    - name: Install composer dependencies
+      run: composer install --no-scripts
+
+    - name: Run Tests
+      run: vendor/bin/phpunit
