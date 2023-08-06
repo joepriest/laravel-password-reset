@@ -4,7 +4,7 @@ A simple artisan command to reset user passwords.
 [![Latest Stable Version](https://poser.pugx.org/joepriest/laravel-password-reset/v/stable?format=flat-square)](https://packagist.org/packages/joepriest/laravel-password-reset)
 [![Total Downloads](https://poser.pugx.org/joepriest/laravel-password-reset/downloads?format=flat-square)](https://packagist.org/packages/joepriest/laravel-password-reset)
 [![License](https://poser.pugx.org/joepriest/laravel-password-reset/license?format=flat-square)](https://packagist.org/packages/joepriest/laravel-password-reset)
-
+[![Actions Status](https://github.com/joepriest/laravel-password-reset/workflows/Tests/badge.svg)](https://github.com/joepriest/laravel-password-reset/actions)
 
 ## Installation
 
